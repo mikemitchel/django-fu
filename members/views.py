@@ -6,7 +6,7 @@ from .models import Member
 
 def members(request):
     mymembers = Member.objects.all().values()
-    template = loader.get_template("all_members.html")
+    template = loader.get_template("members.html")
     context = {
         "mymembers": mymembers,
     }
@@ -24,4 +24,4 @@ def details(request, id):
 
 def main(request):
     template = loader.get_template("main.html")
-    return HttpResponse(template.render(), request)
+    return HttpResponse(template.render())
