@@ -2,16 +2,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
     <title>
       {% block title %}
       {% endblock title %}
     </title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
   </head>
   <body>
-    <div class="topnav">
-      <a href="{% url 'main' %}">HOME</a> |
-      <a href="{% url 'members' %}">MEMBERS</a>
+    <div class="container">
+      <ul class="nav bg-info">
+        <li clas="nav-item">
+          <a class="nav-link link-light" href="{% url 'main' %}">HOME</a>
+        </li>
+        <li clas="nav-item">
+          <a class="nav-link link-light" href="{% url 'members' %}">MEMBERS</a>
+        </li>
+      </ul>
     </div>
     {% block content %}
     {% endblock content %}

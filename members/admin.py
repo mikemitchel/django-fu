@@ -11,6 +11,7 @@ class MemberAdmin(admin.ModelAdmin):
         "lastname",
         "joined_date",
     )
+    prepopulated_fields = {"slug": ("firstname", "lastname")}
 
 
 admin.site.register(Member, MemberAdmin)
